@@ -1,0 +1,16 @@
+{
+	    "suggest.noselect": true,
+	    "suggest.preferCompleteThanJumpPlaceholder": true,
+			"powershell.powerShellAdditionalExePaths": [
+				{
+					"exePath": "C:\\Users\\localadmin\\scoop\\apps\\pwsh-beta\\current\\pwsh.exe",
+					"versionName": "pwsh-beta"
+				},
+				{
+					"exePath": "C:\\Users\\localadmin\\scoop\\apps\\pwsh\\current\\pwsh.exe",
+					"versionName": "pwsh"
+				}
+		],
+		"powershell.powerShellDefaultVersion": "pwsh-beta"
+}
+
