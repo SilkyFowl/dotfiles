@@ -7,4 +7,3 @@ if ($IsWindows) {
     New-Item -it SymbolicLink -p $HOME/Documents/PowerShell/Settings -ta  $HOME/dotfiles/.config/powershell/Settings
     New-Item -it SymbolicLink -p $HOME/Documents/PowerShell/Completions -ta  $HOME/dotfiles/.config/powershell/Completions
 }
-.config\powershell\profile.ps1
