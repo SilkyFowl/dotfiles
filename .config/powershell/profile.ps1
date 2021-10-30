@@ -50,7 +50,7 @@ $($i.body)
 
 if ($IsWindows) {
     . $PSScriptRoot/Settings/WinfowsSettings.ps1
-    . $PSScriptRoot/Settings/WinfowsCompletion.ps1
+    . $PSScriptRoot/Completions/WinfowsCompletion.ps1
 }
 
 # PsReadLine 設定
