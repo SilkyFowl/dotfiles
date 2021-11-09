@@ -1,3 +1,5 @@
-.config/coc
-.config/gh/hosts.yml
-.config/scoop
+.config/*
+!.config/configstore
+!.config/powershell
+!.config/gh/config.yml
+!.config/nvim
