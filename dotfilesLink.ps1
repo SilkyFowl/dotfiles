@@ -1,6 +1,6 @@
 #!/usr/bin/env pwsh
 if (Test-Path $HOME/.config) {
-    Move-Item $HOME/.config $HOME/dotfiles
+    Move-Item $HOME/.config $HOME/dotfiles -force
 }
 
 New-Item -it SymbolicLink -p $HOME/.config -ta $HOME/dotfiles/.config
