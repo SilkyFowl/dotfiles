@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-
+Move-Item $HOME/.config $HOME/dotfiles/
 New-Item -it SymbolicLink -p $HOME/.config -ta $HOME/dotfiles/.config
 
 if ($IsWindows) {
