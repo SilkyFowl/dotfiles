@@ -59,3 +59,24 @@ if ($IsWindows) {
 # 補完の設定
 . $PSScriptRoot/Completions/Completion.ps1
 
+# StarShipの設定
+if ($IsWindows) {
+    $ghParsonal = @{
+        workspace = 'D:\workspace\personal*'
+        env       = @{
+            GH_CONFIG_DIR       = (Resolve-Path '~/.config/gh/personal').Path
+        }
+    }
+}
+function Invoke-Starship-PreCommand {
+    # ghの設定ファイル切り替え
+    if ($pwd.Path -like $ghParsonal.workspace) {
+        $ghParsonal.env.GetEnumerator().foreach{
+            [Environment]::SetEnvironmentVariable($_.name, $_.Value)
+        }
+    } elseif (Test-Path env:/GH_CONFIG_DIR) {
+        [Environment]::SetEnvironmentVariable($_.name, $null)
+    }
+}
+  
+Invoke-Expression (&starship init powershell)
