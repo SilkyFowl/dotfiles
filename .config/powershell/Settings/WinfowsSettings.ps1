@@ -30,6 +30,22 @@ function code-portable {
     New-PSDrive @_ > $null
 }
 
+function ConvertTo-ShortPath {
+    [CmdletBinding()]
+    param (
+        [parameter(ValueFromPipeline)]
+        $target
+    )
+    $fso = New-Object -ComObject Scripting.FileSystemObject
+    if (Test-Path $target -PathType Container) {
+        $fso.GetFolder($target).ShortPath
+    } else {
+        $fso.GetFile($target).ShortPath
+    }
+}
+
+Set-Alias toShortPath ConvertTo-ShortPath
+
 # StarShipの起動
 Invoke-Expression (&starship init powershell)
 $starshipPrompt = (Get-Item Function:\prompt).ScriptBlock
