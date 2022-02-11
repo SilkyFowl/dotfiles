@@ -1,0 +1,4 @@
+--embed-thumbnail
+--embed-metadata
+--format-sort "vbr,abr"
+-o '%(channel)s/%(title)s.%(ext)s'
