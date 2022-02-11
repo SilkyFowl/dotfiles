@@ -12,7 +12,7 @@ if (-not $shouldReadProfile) {
 
 function Get-GithubIssueContent {
     param (
-        [parameter(Mandatory,ValueFromPipeline)][uri]$URI
+        [parameter(Mandatory, ValueFromPipeline)][uri]$URI
     )
     $i = Invoke-RestMethod "https://api.github.com/repos$($URI.PathAndQuery)"
 
@@ -62,9 +62,9 @@ if ($IsWindows) {
 # StarShipの設定
 if ($IsWindows) {
     $ghParsonal = @{
-        workspace = 'D:\workspace\personal*'
+        workspace = 'C:\workspace\personal*'
         env       = @{
-            GH_CONFIG_DIR       = (Resolve-Path '~/.config/gh/personal').Path
+            GH_CONFIG_DIR = (Resolve-Path '~/.config/gh/personal').Path
         }
     }
 }
