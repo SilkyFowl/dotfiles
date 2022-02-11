@@ -1,4 +1,4 @@
 --embed-thumbnail
 --embed-metadata
 --format-sort "vbr,abr"
--o '%(channel)s/%(title)s.%(ext)s'
+-o '~/Videos/yt-dlp/%(channel)s/%(title)s.%(ext)s'
