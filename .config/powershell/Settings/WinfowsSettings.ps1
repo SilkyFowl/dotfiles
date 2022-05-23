@@ -45,26 +45,3 @@ function ConvertTo-ShortPath {
 }
 
 Set-Alias toShortPath ConvertTo-ShortPath
-
-# StarShipの起動
-Invoke-Expression (&starship init powershell)
-$starshipPrompt = (Get-Item Function:\prompt).ScriptBlock
-
-
-function prompt {
-
-    # 出力結果
-    $out = [System.Text.StringBuilder]::new()
-
-
-    # StarShip
-    try {
-        $out.Append((Invoke-Command $starshipPrompt )) > $null
-    } catch {
-        (Get-Process -id $PID).CommandLine 2>&1 >> Temp:/starshipPromptError.log
-        Write-Error $_ 2>&1 >> Temp:/starshipPromptError.log
-    }
-
-    # 出力
-    $out.ToString()
-}
