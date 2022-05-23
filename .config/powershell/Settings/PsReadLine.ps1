@@ -1,4 +1,4 @@
-﻿using namespace Microsoft.PowerShell
+using namespace Microsoft.PowerShell
 
 # # https://qiita.com/AWtnb/items/5551fcc762ed2ad92a81#履歴管理
 Set-PSReadlineOption -HistoryNoDuplicates
@@ -118,15 +118,15 @@ Set-PSReadLineKeyHandler -Key "ctrl+V" -BriefDescription "setClipString" -LongDe
 }
 
 # Predictation関連
-if ($PSVersionTable.PSVersion -ge '7.2.0-preview') {
-    Set-PSReadLineOption -PredictionSource History
+if ($PSVersionTable.PSVersion -ge '7.2.0') {
+    Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 } else {
     Set-PSReadLineOption -PredictionSource History
 }
 if ([Console]::WindowHeight -ge 15 -and [Console]::WindowWidth -ge 54) {
-   # Set-PSReadLineOption -PredictionViewStyle ListView
+   Set-PSReadLineOption -PredictionViewStyle ListView
 } else {
-   # Set-PSReadLineOption -PredictionViewStyle InlineView
+   Set-PSReadLineOption -PredictionViewStyle InlineView
 }
 Set-PSReadLineOption -Colors @{InlinePrediction = [ConsoleColor]::DarkBlue }
 
